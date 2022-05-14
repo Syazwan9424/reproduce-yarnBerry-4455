@@ -1,0 +1,15 @@
+name: test
+on: [push]
+jobs:
+  TestYarnOffline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: ./test.sh
+  TestYarnOfflineDebug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: DEBUG=1 ./test.sh
